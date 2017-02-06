@@ -29,12 +29,12 @@ let total= numPlus(6)
 // total = 9
 
     In this example num1 is local to add() but it is not local to plus() which has num2 as a local
-variable.  plus() can however see add(). When we say let numPlus =add(3) the value 3 is bound to 
+variable.  plus() can however see add(). When we say let numPlus = add(3) the value 3 is bound to 
 the variable num1. The new variable numPlus references the inner scope of function add(). This 
 creates a closure, add() is 'closed over' or 'frozen' for later use. When we say 
 let total = numPlus(6) the closure is entered and add() returns its inner function. 
 Now plus() can be executed while num1 is 'holding on' to the value 3 and 6 is taken as the value 
-for num2. NumPlus(6) is exposing the function plus() inside of the function add() even though it 
+for num2. Therefore numPlus(6) is exposing the function plus() inside of the function add() even though it 
 is outside of its scope.
 
 
@@ -47,10 +47,10 @@ Sources:
 
 Haverbeke, Marijn. (2011). Eloquent Javascript. Retrieved from http://eloquentjavascript.net/03_functions.html
 
-Ihrig, Colin.(2012, June 21). Javascript Closures Demystified. Retrieved from 
+Ihrig, Colin. (2012, June 21). Javascript Closures Demystified. Retrieved from 
 https://www.sitepoint.com/javascript-closures-demystified/
 
-Javascript Closures.(1999). Retrieved from http://www.w3schools.com/js/js_function_closures.asp
+Javascript Closures. (1999). Retrieved from http://www.w3schools.com/js/js_function_closures.asp
 
-Morris. (2006, Feb.21). How do Javascript closures work?[Online Forum Comment] Message posted to 
+Morris. (2006, Feb.21). How do Javascript closures work? [Online Forum Comment] Message posted to 
 http://stackoverflow.com/questions/111102/how-do-javascript-closures-work 
