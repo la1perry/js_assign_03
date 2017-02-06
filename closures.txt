@@ -1,0 +1,56 @@
+
+	As we know a function can wrap a piece of program in a variable. The variables created inside of 
+that function are local to it and not visible from outside of it, they exist within the scope of that 
+function. This prevents variables inside of a function from being changed without the function being 
+called, and prevents variables interfering with each other in unwanted ways. Each local scope inside
+of a function can see the local scopes that contain it, both those in the function body and at the 
+top level of the program.  By storing a function in a variable you can store the function's value in 
+a new place. It can be passed to another function which can in turn access the values stored in the 
+first function, even though it is outside the local scope of the other function which is accessing 
+it. This is done by using closure.
+	 Closure is the ability to reference the environment where a local variable was created and have
+access to the value associated with it. It occurs when a function is called inside of another function.
+The function nested inside of the first function will have access to the outer function's scope and 
+can therefore use their arguments/variables. Closure is created when this inner function is made 
+accessible from outside of the function that created it. The inner function maintains its connection to 
+the environment it was created in. This allows a function to have access to its parent's scope 
+even after the function is closed/executed.
+ 
+For example:
+
+function add(num1){
+return function plus(num2) {
+return num1 + num2;
+};
+}
+let numPlus = add(3)
+let total= numPlus(6)
+
+// total = 9
+
+    In this example num1 is local to add() but it is not local to plus() which has num2 as a local
+variable.  plus() can however see add(). When we say let numPlus =add(3) the value 3 is bound to 
+the variable num1. The new variable numPlus references the inner scope of function add(). This 
+creates a closure, add() is 'closed over' or 'frozen' for later use. When we say 
+let total = numPlus(6) the closure is entered and add() returns its inner function. 
+Now plus() can be executed while num1 is 'holding on' to the value 3 and 6 is taken as the value 
+for num2. NumPlus(6) is exposing the function plus() inside of the function add() even though it 
+is outside of its scope.
+
+
+
+
+
+
+Sources:
+
+
+Haverbeke, Marijn. (2011). Eloquent Javascript. Retrieved from http://eloquentjavascript.net/03_functions.html
+
+Ihrig, Colin.(2012, June 21). Javascript Closures Demystified. Retrieved from 
+https://www.sitepoint.com/javascript-closures-demystified/
+
+Javascript Closures.(1999). Retrieved from http://www.w3schools.com/js/js_function_closures.asp
+
+Morris. (2006, Feb.21). How do Javascript closures work?[Online Forum Comment] Message posted to 
+http://stackoverflow.com/questions/111102/how-do-javascript-closures-work 
