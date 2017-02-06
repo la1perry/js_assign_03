@@ -6,14 +6,14 @@ called, and prevents variables interfering with each other in unwanted ways. Eac
 of a function can see the local scopes that contain it, both those in the function body and at the 
 top level of the program.  By storing a function in a variable you can store the function's value in 
 a new place. It can be passed to another function which can in turn access the values stored in the 
-first function, even though it is outside the local scope of the other function which is accessing 
+first function, even though they are outside the local scope of the function which is accessing 
 it. This is done by using closure.
 	 Closure is the ability to reference the environment where a local variable was created and have
 access to the value associated with it. It occurs when a function is called inside of another function.
-The function nested inside of the first function will have access to the outer function's scope and 
+The function nested inside of the first function will have access to the outer functions scope and 
 can therefore use their arguments/variables. Closure is created when this inner function is made 
 accessible from outside of the function that created it. The inner function maintains its connection to 
-the environment it was created in. This allows a function to have access to its parent's scope 
+the context it was created in. This allows a function to have access to its parents scope 
 even after the function is closed/executed.
  
 For example:
