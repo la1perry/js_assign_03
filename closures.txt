@@ -4,7 +4,7 @@ that function are local to it and not visible from outside of it, they exist wit
 function. This prevents variables inside of a function from being changed without the function being 
 called, and prevents variables interfering with each other in unwanted ways. Each local scope inside
 of a function can see the local scopes that contain it, both those in the function body and at the 
-top level of the program.  By storing a function in a variable you can store the function's value in 
+top level of the program.  By storing a function in a variable you can store the functions value in 
 a new place. It can be passed to another function which can in turn access the values stored in the 
 first function, even though they are outside the local scope of the function which is accessing 
 it. This is done by using closure.
